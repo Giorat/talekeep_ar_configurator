@@ -1,0 +1,19 @@
+{
+  "name": "talekeep_ar_configurator",
+  "version": "1.0.0",
+  "description": "3D Configurator to change materials and model elements",
+  "main": "index.html",
+  "scripts": {
+    "start": "yarn start:basic",
+    "start:basic": "parcel basic/index.html --open",
+    "build:basic": "parcel build basic/index.html"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1",
+    "parcel-plugin-static-files-copy": "^2.2.1"
+  },
+  "license": "MIT"
+}

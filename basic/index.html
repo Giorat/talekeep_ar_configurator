@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+  <title>taleekp - basic configurator Daydrean</title>
+  <!--- BabylonJS Stable Scripts --->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src=https://cdn.babylonjs.com/inspector/babylon.inspector.bundle.js> </script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+  <script src="http://jscolor.com/release/2.0/jscolor-2.0.5/jscolor.js"></script>
+
+  <!-- Custom Index Script -->
+  <script src="./index.js"></script>
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+  <style>
+    #renderCanvas {
+      width: 100%;
+      height: 100%;
+      min-height: 600px;
+      touch-action: none;
+    }
+  </style>
+</head>
+
+<body class="w-100 sans-serif bg-white">
+  <nav class="pa3 pa4-ns">
+    <a class="w-100 link dim black b f1 tc db mb3 mb4-ns" href="#" title="Home">Daydream</a>
+    <div class="tc pb3">
+      <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Home">Home</a>
+      <a class="link dim gray f6 f5-ns dib mr3" href="#" title="About">About</a>
+      <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Store">Store</a>
+      <a class="link dim gray f6 f5-ns dib" href="#" title="Contact">Contact</a>
+    </div>
+  </nav>
+
+  <article class="center mw8">
+    <canvas id="renderCanvas"></canvas>
+  </article>
+  <article class="center mw7">
+    <div class="pa3">
+      <div class="ph3">
+        Cover Color: <input id="coverColor" class="jscolor ma2" value="ffffff" /><br />
+        Straps Color: <input id="strapsColor" class="jscolor ma2" value="ffffff" />
+        <script>
+          document.getElementById("coverColor").addEventListener('change', function (e) {
+            var color = e.target.value;
+            changeColorCover(BABYLON.Color3.FromHexString("#" + color));
+          });
+          document.getElementById("strapsColor").addEventListener('change', function (e) {
+            var color = e.target.value;
+            changeColorStraps(BABYLON.Color3.FromHexString("#" + color));
+          });
+        </script>
+      </div>
+    </div>
+  </article>
+
+
+  <article class="center mw7">
+    <div class="pa3">
+      <div class="ph3">
+        <button class="input-reset ba b--purple bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib purple"
+          onclick="coverPurple();">Purple Cover</button>
+        <button class="input-reset ba b--red bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib red"
+          onclick="coverRed();">Red Cover</button>
+        <button class="input-reset ba b--green bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib green"
+          onclick="coverGreen();">Green Cover</button>
+      </div>
+      <div class="ph3 mb4">
+        <button class="input-reset ba b--black bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib navy"
+          onclick="colorsDefault();">Default Colors</button>
+        <button class="input-reset ba b--black bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib navy"
+          onclick="triggerLogoGoogle();">Switch Google Logo</button>
+        <button class="input-reset ba b--black bg-transparent f6 dim br2 ba bw2 ph3 pv2 mb2 dib navy"
+          onclick="resetView();">Reset View</button>
+      </div>
+    </div>
+  </article>
+
+</body>
+
+</html>
