@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", function() {
-
   // Create Babylon Canvas
   var canvas = document.getElementById("renderCanvas");
   var engine = new BABYLON.Engine(canvas, true);
@@ -25,6 +24,9 @@ window.addEventListener("DOMContentLoaded", function() {
     scene.fogDensity = 0.01;
 
     //scene.debugLayer.show();
+
+    //setup highlighter
+    window.hl = new BABYLON.HighlightLayer("hl1", scene);
 
     BABYLON.SceneLoader.LoadAssetContainer(
       "./model/",
